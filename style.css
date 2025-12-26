@@ -1,0 +1,300 @@
+/* Grundläggande reset och typsnitt */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; /* Modernt typsnitt */
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    color: #333;
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+/* Generell styling för sociala länkar */
+.social-link {
+    display: inline-block;
+    padding: 0 10px; /* Ger lite utrymme mellan länkarna */
+    color: lightgray; /* Sätter en standardfärg för att SVG:n ska ärva */
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+    /* Hover effekt för länkarna */
+    .social-link:hover {
+        color: white; /* Bli helt vit vid hovring */
+    }
+
+    /* Kontrollera storleken på ikonerna */
+    .social-link svg {
+        width: 26px; /* Storlek för båda ikonerna */
+        height: 26px;
+        /* Denna rad löser problemet med blå färg om du tog bort fill="currentColor" */
+        fill: currentColor;
+        vertical-align: middle; /* Centrerar dem vertikalt */
+    }
+
+/* Du kan lägga till extra marginal till Instagram om du vill ha ett större gap */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+/* --- Header Styling --- */
+.header {
+    /* Mörk bakgrund för kontrast mot sidan */
+    background-color: #1A1A1D;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+}
+
+.logo {
+    font-family: 'Helvetica Neue', sans-serif; /* Använd ett rent, modernt typsnitt */
+    font-size: 1.8em;
+    font-weight: 800; /* Extra fet */
+    letter-spacing: 0.5px; /* Ger en professionell touch */
+    color: lightgray;
+}
+
+/* Navigering */
+nav {
+    display: flex;
+    align-items: center;
+}
+
+/* Stilen för SVG-länken */
+.header a {
+    /* Tar bort den fula blå linjen från länken */
+    text-decoration: none;
+    display: inline-block;
+    transition: opacity 0.2s ease;
+}
+
+/* Styling av Instagram SVG-ikonen */
+.header svg {
+    /* Bestämmer storleken (snyggt och diskret) */
+    fill: lightgray;
+    color: lightgray;
+    width: 28px;
+    height: 28px;
+}
+
+/* Hover-effekt: Gör ikonen vit vid muspekaren */
+.header a:hover svg {
+    fill: white;
+}
+
+/* --- Responsive/Mobile Justering --- */
+@media (max-width: 600px) {
+    .header {
+        padding: 15px 3%;
+    }
+
+    .logo {
+        font-size: 1.4em;
+    }
+
+    .header svg {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 1%;
+    background-color: #E6F3FF; /* Mycket ljusblå bakgrund */
+}
+
+    .hero h1 {
+        font-size: 3.2em;
+        color: #1A1A1D;
+        margin-bottom: 15px;
+    }
+
+.hero-subtitle-container {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+/* Styling för den nya punktlistan i HERO-sektionen */
+.hero-list {
+    list-style-type: none; /* Ta bort standard prickar */
+    padding: 0;
+    margin: 0 auto 20px auto;
+    max-width: 750px; /* Begränsa bredden för bättre läsbarhet */
+    text-align: left; /* Gör listan vänsterställd */
+    font-size: 1.1em;
+    color: #333;
+}
+
+.hero-list li {
+    margin-bottom: 8px; /* Lägg till vertikalt utrymme mellan punkterna */
+    padding-left: 1.2em; /* Skapa utrymme för anpassad markör */
+    position: relative;
+}
+
+.hero-list li:before {
+    content: "•"; /* Eller en enkel '•' om du föredrar det */
+    position: absolute;
+    left: 0;
+    color: #000000;
+    font-size: 1.2em;
+}
+
+/* CTA Button */
+.cta-button {
+    margin-bottom: 10px;
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 18px 35px;
+    text-decoration: none;
+    font-size: 1.3em;
+    font-weight: bold;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-1px);
+}
+
+/* Stil för inaktiverad knapp */
+.cta-button.disabled {
+    background-color: #bdc3c7; /* Grå färg som signalerar "avstängd" */
+    color: #ffffff;
+    cursor: not-allowed; /* Visar en "stopp"-ikon för muspekaren */
+    pointer-events: none; /* Gör länken helt oklickbar */
+    box-shadow: none; /* Tar bort skuggan för en "plattare" look */
+    opacity: 0.8;
+}
+
+/* Förhindrar hover-effekten på den inaktiva knappen */
+.cta-button.disabled:hover {
+    background-color: #bdc3c7;
+    transform: none;
+}
+
+.credibility-intro {
+    padding: 30px 10%;
+    margin: 40px auto;
+    max-width: 900px;
+    background-color: #f8f8f8;
+    border-left: 5px solid #007bff;
+    line-height: 1.8;
+    border-radius: 4px;
+}
+
+    .credibility-intro h2 {
+        /* Gör rubriken stor, fet och direkt */
+        font-size: 1.8em;
+        color: #1A1A1D;
+        margin-top: 0;
+        margin-bottom: 15px;
+        border-bottom: none;
+    }
+
+.secondary-info {
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 15px;
+    border-top: 1px dashed #ddd;
+    padding-top: 10px;
+}
+
+/* Features Grid (Kärnan i denna design) */
+.section-title {
+    text-align: center;
+    font-size: 1.9em;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #1A1A1D;
+}
+
+.features-grid {
+    padding: 0;
+    display: grid;
+    /* Grid som anpassar sig till 2 kolumner på större skärmar */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto 60px auto;
+}
+
+.feature-card {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.3s;
+}
+
+    .feature-card:hover {
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+.icon {
+    font-size: 2em;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.feature-card h3 {
+    color: #007bff;
+    margin-top: 0;
+    font-size: 1.3em;
+}
+
+.feature-image {
+    width:48px; /* Sätter storlek på bilden */
+    height: 48px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/*.chart-wrapper iframe {
+    width: 100% !important;
+    height: 600px !important;
+}
+
+@media (max-width: 768px) {
+    .chart-wrapper iframe {
+        height: 400px !important;
+    }
+}*/
+
+/* Final CTA Block */
+.final-cta-block {
+    text-align: center;
+    padding: 1px;
+    background-color: #1A1A1D;
+    color: white;
+    margin-top: 40px;
+}
+
+    .final-cta-block .section-title {
+        color: white;
+        border-bottom: none;
+    }
+
+.primary-cta {
+    background-color: #4CAF50; /* Grön konverteringsfärg */
+    font-size: 1.5em;
+    padding: 20px 40px;
+}
+
+    .primary-cta:hover {
+        background-color: #388E3C;
+    }
+
+.small-print {
+    opacity: 0.8;
+}
